@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+	_ExternalLibs.txt의 내용에 platform을 적용할 경우
+	기본은 AnyCPU, x86 상태롤 두고 
+	Platform을 적용할 파일에는 \x64 폴더를 만들어 복사한다.
+
+	ex) OpenCV 폴더에는 아래와 같이 2개의 tbb.dll 파일이 있고
+			OpenCV\tbb.dll
+			OpenCV\x64\tbb.dll
+
+		_ExternalLibs.txt 에는 아래와 같은 내용이 있다면
+			OpenCV\x64\tbb.dll
+
+		tbb.dll은 $(PlatFormName)이 
+			x64 일 경우에는 OpenCV\x64\tbb.dll을 복사하고
+			그 외에는 OpenCV\tbb.dll을 복사한다.
+
+-->
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="CopyExternalLibraries">
+		<PropertyGroup>
+			<ExternalLibsPath>..\..\_ExternalLibs\</ExternalLibsPath>
+			<PlatformPath Condition=" '$(PlatformName)' == 'x64' ">\x64\</PlatformPath>
+			<PlatformPath Condition=" '$(PlatformName)' != 'x64' ">\</PlatformPath>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<ExternalLibsFile Include="$(ProjectDir)_ExternalLibs.txt" />
+		</ItemGroup>
+
+		<ReadLinesFromFile File="@(ExternalLibsFile)" Condition=" Exists('@(ExternalLibsFile)') " >
+			<Output TaskParameter="Lines" ItemName="LibItemsFromFile"/>
+		</ReadLinesFromFile>
+				
+		<Message Condition=" Exists('@(ExternalLibsFile)') "
+				 Text="외부 참조 라이브러리 목록을 읽었습니다." Importance="high" />
+
+		<CombinePath Condition=" Exists('@(ExternalLibsFile)') "
+					 BasePath="$(ExternalLibsPath)" Paths="@(LibItemsFromFile)">
+			<Output TaskParameter="CombinedPaths" ItemName="ExternalLibFiles"/>
+		</CombinePath>
+<!-- 
+	<Message Text="'$([System.String]::Copy(&quot;%(ExternalLibFiles.FullPath)&quot;).Replace(&quot;\x64\&quot;, $(PlatformPath)))'" Importance="high"/>
+-->
+		<Copy Condition=" Exists('@(ExternalLibsFile)') "
+			  SourceFiles="$([System.String]::Copy(&quot;%(ExternalLibFiles.FullPath)&quot;).Replace(&quot;\x64\&quot;, $(PlatformPath)))"
+			  DestinationFolder="$(TargetDir)"
+			  ContinueOnError="true" SkipUnchangedFiles="true" />
+
+		<Message Condition=" Exists('@(ExternalLibsFile)') "
+				 Text="외부 참조 라이브러리 파일을 복사했습니다." Importance="high" />
+	</Target>
+</Project>

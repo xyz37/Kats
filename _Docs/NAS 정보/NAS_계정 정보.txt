@@ -1,0 +1,32 @@
+Server Name : XNAS
+Manage Port : 5000
+
+
+Account
+	Admin : 
+		
+	User : 
+		subcontract / a12345678B
+
+
+Mariadb : port 9933
+	root / a12345678B
+
+	사용자 설정값은 하단의 위치한 my.cnf 파일에 설정한다.
+		sudo vi /var/packages/MariaDB10/etc/my.cnf
+		cp /volume1/Gachisoft/my.cnf /var/packages/MariaDB10/etc/my.cnf
+
+	수동 재시작
+		sudo /usr/syno/bin/synopkg restart MariaDB
+
+	포트 설정 및 시작 확인 
+		 ps -ef | grep MariaDB10
+
+	root에 모든 호스트(%) 권한을 줘야 함
+
+
+FTP : port 5521
+	User, Admin 계정 사용
+
+
+

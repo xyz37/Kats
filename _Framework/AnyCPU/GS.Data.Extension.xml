@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GS.Data.Extension</name>
+    </assembly>
+    <members>
+        <member name="T:System.Data.Entity.DbContextExtensions">
+            <summary>
+            <seealso cref="T:System.Data.Entity.DbContext"/>의 Stored Procedure 관련 확장 기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.PrepareProcedure(System.Data.Entity.DbContext,System.String,System.Int32)">
+            <summary>
+            Stored Procedure를 사용하는 <seealso cref="T:System.Data.Common.DbCommand"/>를 구합니다.
+            </summary>
+            <param name="dbContext">DbContext</param>
+            <param name="procedureName">DbCommand에서 사용할 Stored Procedure 이름</param>
+            <param name="timeoutSeconds">명령 실행을 종료하고 오류를 생성하기 전 대기 시간</param>
+            <returns><seealso cref="T:System.Data.Common.DbCommand"/>를 반환합니다.</returns>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.PrepareSqlCommand(System.Data.Entity.DbContext,System.String,System.Int32)">
+            <summary>
+            T-SQL 을 직접 사용하는 <seealso cref="T:System.Data.Common.DbCommand"/>를 구합니다.
+            </summary>
+            <param name="dbContext">DbContext</param>
+            <param name="sqlCommand">DbCommand에서 사용할 SQL 텍스트 명령</param>
+            <param name="timeoutSeconds">명령 실행을 종료하고 오류를 생성하기 전 대기 시간</param>
+            <returns><seealso cref="T:System.Data.Common.DbCommand"/>를 반환합니다.</returns>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.SetParameter(System.Data.Common.DbCommand,System.String,System.Object)">
+            <summary>
+            DbCommand에 Parameter를 추가 합니다.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="parameterName">파라미터 이름</param>
+            <param name="value">파라미터 값</param>
+            <returns>DbCommand.</returns>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.SetParameters(System.Data.Common.DbCommand,System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            DbCommand에 Parameter를 추가 합니다.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>DbCommand.</returns>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.GetDataTable(System.Data.Common.DbCommand,System.String)">
+            <summary>
+            Stored Procedure를 이용한 <seealso cref="T:System.Data.Common.DbCommand"/>에서 DataTable을 구합니다.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="tableName">테이블 이름</param>
+            <returns>tableName의 이름을 가진 <seealso cref="T:System.Data.DataTable"/>을 반환 합니다.</returns>
+            <exception cref="T:System.Data.DataException">명령 텍스트를 실행하는 동안 오류가 발생했습니다.</exception>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.GetDataSet(System.Data.Common.DbCommand,System.String)">
+            <summary>
+            Stored Procedure를 이용한 <seealso cref="T:System.Data.Common.DbCommand"/>에서 DataTable을 구합니다.
+            </summary>
+            <param name="command">The command.</param>
+            <param name="dataSetName">테이블 이름</param>
+            <returns>tableName의 이름을 가진 <seealso cref="T:System.Data.DataTable"/>을 반환 합니다.</returns>
+            <exception cref="T:System.Data.DataException">명령 텍스트를 실행하는 동안 오류가 발생했습니다.</exception>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.Execute(System.Data.Common.DbCommand)">
+            <summary>
+            Stored Procedure를 이용한 <seealso cref="T:System.Data.Common.DbCommand"/>를 실행하고 영향 받는 행을 반환합니다.
+            <remarks>SET NOCOUNT가 ON으로 설정되어 있으면 -1을 반환 합니다.</remarks>
+            </summary>
+            <param name="command">The command.</param>
+            <returns>실행에 영향받은 행을 반환 합니다.(실패하면 0 을 반환 합니다.)</returns>
+            <exception cref="T:System.Data.DataException">명령 텍스트를 실행하는 동안 오류가 발생했습니다.</exception>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.Translate``1(System.Data.Common.DbCommand,System.Data.Entity.DbContext)">
+            <summary>
+            Stored Procedure를 이용한 <seealso cref="T:System.Data.Common.DbCommand"/>에서 Entity을 구합니다.
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="command">The command.</param>
+            <param name="dbContext">Entity를 구할 DbContext</param>
+            <returns>tableName의 이름을 가진 <seealso cref="T:System.Data.DataTable"/>을 반환 합니다.</returns>
+            <exception cref="T:System.Data.DataException">명령 텍스트를 실행하는 동안 오류가 발생했습니다.</exception>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.GetDataTable(System.Data.Entity.DbContext,System.String,System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            Stored Procedure를 통해서 DataTable을 구합니다.
+            </summary>
+            <param name="db">The db.</param>
+            <param name="procedureName">Name of the procedure.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>procedureName의 이름을 가진 <seealso cref="T:System.Data.DataTable"/>을 반환 합니다.</returns>
+            <exception cref="T:System.Data.DataException">명령 텍스트를 실행하는 동안 오류가 발생했습니다.</exception>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.GetDataSet(System.Data.Entity.DbContext,System.String,System.Collections.Generic.KeyValuePair{System.String,System.Object}[])">
+            <summary>
+            Stored Procedure를 통해서 DataSet을 구합니다.
+            </summary>
+            <param name="db">The db.</param>
+            <param name="procedureName">Name of the procedure.</param>
+            <param name="parameters">The parameters.</param>
+            <returns>procedureName의 이름을 가진 <seealso cref="T:System.Data.DataSet"/>을 반환 합니다.</returns>
+            <exception cref="T:System.Data.DataException">명령 텍스트를 실행하는 동안 오류가 발생했습니다.</exception>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.Truncates(System.Data.Entity.DbContext,System.String[])">
+            <summary>
+            지정한 테이블 데이터를 모두 삭제합니다.
+            <remarks>지정하지 않으면 모든 테이블의 데이터를 삭제 합니다.</remarks>
+            </summary>
+            <param name="db">The database.</param>
+            <param name="tables">삭제하려는 테이블 목록.</param>
+            <returns>삭제한 행 수</returns>
+        </member>
+        <member name="M:System.Data.Entity.DbContextExtensions.GetTableList(System.Data.Entity.DbContext)">
+            <summary>
+            지정된 DbContext에서 테이블 목록을 구합니다.
+            </summary>
+            <param name="db"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Data.Entity.EntityExtensions">
+            <summary>
+            Entity Framework에 대한 확장 기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.EntityExtensions.Refresh``1(System.Data.Entity.DbContext,``0)">
+            <summary>
+            Refreshes the specified context.
+            </summary>
+            <typeparam name="TEntity">The type of the T entity.</typeparam>
+            <param name="context">The context.</param>
+            <param name="entity">The entity.</param>
+        </member>
+        <member name="T:System.Data.Entity.LocalDbConfiguration">
+            <summary>
+            <seealso cref="T:System.Data.Entity.DbContext"/>를 상속받은 DbContext 개체에 LocalDb를 사용하는 <seealso cref="T:System.Data.Entity.DbConfiguration"/> 의 기능을 구현합니다.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.LocalDbConfiguration.#ctor">
+            <summary>
+            LocalDbConfiguration class의 새 인스턴스를 초기화 합니다.
+            </summary>
+        </member>
+        <member name="M:System.Data.Entity.LocalDbConfiguration.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the LocalDbConfiguration class.
+            </summary>
+            <param name="databaseName">database 이름.</param>
+            <param name="dataFileName">DataFileName를 구하거나 설정합니다.(확장자 .mdf 포함, |TargetDir|을 포함할 경우 프로젝트 output 경로로 변경)</param>
+            <param name="localDbVersion">LocalDb version.</param>
+        </member>
+        <member name="M:System.Data.Entity.LocalDbConfiguration.SetDefaultConnectionFactory(System.String,System.String,System.String)">
+            <summary>
+            Sets the default connection factory.
+            </summary>
+            <param name="databaseName">Name of the database.</param>
+            <param name="dataFileName">Name of the data file.</param>
+            <param name="localDbVersion">v11.0, MSSQLLocalDB (v12) 등을 지정하지 않으면 자동으로 설치된 최신 버전으로 구합니다.</param>
+        </member>
+        <member name="M:System.Data.Entity.LocalDbConfiguration.RestartLocalDbInstance(System.String)">
+            <summary>
+            Restarts the local database instance.
+            </summary>
+            <param name="localDbVersion">The local database version.</param>
+            <returns><c>true</c> if XXXX, <c>false</c> otherwise.</returns>
+        </member>
+        <member name="P:System.Data.Entity.LocalDbConfiguration.LocalDbVersion">
+            <summary>
+            LocalDbVersion를 구하거나 설정합니다.(v11.0 형식)
+            </summary>
+            <value>LocalDbVersion을 반환합니다.</value>
+        </member>
+        <member name="P:System.Data.Entity.LocalDbConfiguration.DatabaseName">
+            <summary>
+            DatabaseName를 구하거나 설정합니다.
+            </summary>
+            <value>DatabaseName을 반환합니다.</value>
+        </member>
+        <member name="P:System.Data.Entity.LocalDbConfiguration.DataFileName">
+            <summary>
+            DataFileName를 구하거나 설정합니다.(확장자 .mdf 포함)
+            </summary>
+            <remarks>|TargetDir|을 포함할 경우 프로젝트 output 경로로 변경됩니다.</remarks>
+            <value>DataFileName을 반환합니다.</value>
+        </member>
+    </members>
+</doc>

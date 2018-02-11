@@ -1,0 +1,727 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GS.Web.Common</name>
+    </assembly>
+    <members>
+        <member name="T:GS.Web.Common.GlobalConstants">
+            <summary>
+            Framework에서 사용되는 공통 상수를 정의 합니다.
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.GlobalConstants.FIFTYONE_IS_WIRELESS_DEVICE_KEY">
+            <summary>
+            51 degrees에서 Wireless device인지 검사하는 브라우저키 입니다.
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.GlobalConstants.FIFTYONE_IS_TABLET_KEY">
+            <summary>
+            51 degrees에서 Tablet device인지 검사하는 브라우저키 입니다.
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.GlobalConstants.FIFTYONE_BRAND_NAME_KEY">
+            <summary>
+            51 degrees에서 Brand name을 검사하는 브라우저키 입니다.
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.GlobalConstants.FIFTYONE_MODEL_NAME_KEY">
+            <summary>
+            51 degrees에서 Model name을 검사하는 브라우저키 입니다.
+            </summary>
+        </member>
+        <member name="T:System.WebStringExtensions">
+            <summary>
+            문자열에 적용되는 확장 기능을 지원합니다.
+            </summary>
+        </member>
+        <member name="M:System.WebStringExtensions.SetFileNameRule(System.String,System.String)">
+            <summary>
+            파일이름 규칙을 적용합니다.(GS.Common에 있는데 중복이름 때문에 사용하지 않는다._
+            </summary>
+            <param name="fileName">규칙을 적용할 파일 이름</param>
+            <param name="replaceString">위배되는 규칙을 변경할 문자</param>
+        </member>
+        <member name="M:System.WebStringExtensions.ReplaceNewLineToBreakLine(System.Text.StringBuilder)">
+            <summary>
+            개행문자를 웹에서 사용할 수 있는 break line(<br />)로 대체합니다.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.WebStringExtensions.ReplaceNewLineToBreakLine(System.String)">
+            <summary>
+            개행문자를 웹에서 사용할 수 있는 break line(<br />)로 대체합니다.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GS.Web.Common.Mail.MailHelper">
+            <summary>
+            메일 전송과 관련된 기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.Mail.MailHelper.SubjectFormatStringInError">
+            <summary>
+            에러 발생시 사용할 제목 문자열 입니다.
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.Mail.MailHelper.HTTP_ERROR_404_TITLE">
+            <summary>
+            HTTP 400 에러 타이틀
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.Mail.MailHelper.HTTP_ERROR_500_TITLE">
+            <summary>
+            HTTP 500 에러 타이틀
+            </summary>
+        </member>
+        <member name="F:GS.Web.Common.Mail.MailHelper.HTTP_ERROR_500_MESSAGE">
+            <summary>
+            HTTP 500 에러 메세지
+            </summary>
+        </member>
+        <member name="M:GS.Web.Common.Mail.MailHelper.SendAsync(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            비동기 방식을 사용하여 배달용 SMTP 서버로 지정된 메시지를 보냅니다.
+            </summary>
+            <param name="to">이 전자 메일 메시지를 받는 사람입니다.<br/>받는 사람을 세미콜론으로 구분하여 여러 명을 지정할 수도 있습니다.</param>
+            <param name="subject">전자 메일 메시지의 제목 줄입니다.</param>
+            <param name="body">전자 메일 메시지의 본문입니다. isBodyHtml 값이 true인 경우 본문의 HTML이 태그로 해석됩니다.</param>
+            <param name="from">메시지를 보낸 사람의 전자 메일 주소입니다.</param>
+            <param name="cc">전자 메일 메시지의 참조(CC) 수신자입니다(있을 경우).<br/>받는 사람을 세미콜론으로 구분하여 여러 명을 지정할 수도 있습니다.</param>
+            <param name="bcc">전자 메일 메시지의 숨은 참조(BCC) 수신자입니다(있을 경우).<br/>받는 사람을 세미콜론으로 구분하여 여러 명을 지정할 수도 있습니다.</param>
+            <param name="filesToAttach">전자 메일 메시지에 첨부할 파일을 지정하는 파일 이름의 컬렉션입니다.</param>
+            <param name="isBodyHtml">전자 메일 메시지 본문을 HTML 형식으로 지정하려면 true이고, 일반 텍스트 형식으로 지정하려면 false입니다.</param>
+            <param name="additionalHeaders">이 전자 메일 메시지와 함께 전송되는 헤더의 컬렉션입니다.</param>
+        </member>
+        <member name="M:GS.Web.Common.Mail.MailHelper.Send(System.String,System.String,System.String,System.String,System.String,System.String,System.Collections.Generic.IEnumerable{System.String},System.Boolean,System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            배달용 SMTP 서버로 지정된 메시지를 보냅니다.
+            </summary>
+            <param name="to">이 전자 메일 메시지를 받는 사람입니다.<br/>받는 사람을 세미콜론으로 구분하여 여러 명을 지정할 수도 있습니다.</param>
+            <param name="subject">전자 메일 메시지의 제목 줄입니다.</param>
+            <param name="body">전자 메일 메시지의 본문입니다. isBodyHtml 값이 true인 경우 본문의 HTML이 태그로 해석됩니다.</param>
+            <param name="from">메시지를 보낸 사람의 전자 메일 주소입니다.</param>
+            <param name="cc">전자 메일 메시지의 참조(CC) 수신자입니다(있을 경우).<br/>받는 사람을 세미콜론으로 구분하여 여러 명을 지정할 수도 있습니다.</param>
+            <param name="bcc">전자 메일 메시지의 숨은 참조(BCC) 수신자입니다(있을 경우).<br/>받는 사람을 세미콜론으로 구분하여 여러 명을 지정할 수도 있습니다.</param>
+            <param name="filesToAttach">전자 메일 메시지에 첨부할 파일을 지정하는 파일 이름의 컬렉션입니다.</param>
+            <param name="isBodyHtml">전자 메일 메시지 본문을 HTML 형식으로 지정하려면 true이고, 일반 텍스트 형식으로 지정하려면 false입니다.</param>
+            <param name="additionalHeaders">이 전자 메일 메시지와 함께 전송되는 헤더의 컬렉션입니다.</param>
+            <remarks>보낼 때 오류는 전달하지 않습니다.</remarks>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.SmtpServer">
+            <summary>
+            SmtpServer를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.SmtpPort">
+            <summary>
+            SmtpPort를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.EnableSsl">
+            <summary>
+            SSL 사용여부를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.UserName">
+            <summary>
+            SmtpServer의 사용자 이름을 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.Password">
+            <summary>
+            SmtpServer의 사용자 암호를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.SmtpUseDefaultCredentials">
+            <summary>
+            SmtpServer의 기본 자격증명을 사용할지 여부를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.Mail.MailHelper.From">
+            <summary>
+            보낸 사람 Email을 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="T:GS.Common.Utility.Excels.ColumnCollection">
+            <summary>
+            Grid에서 컬럼을 구한 뒤 컬럼 정보를 전송하는 DTO 객체 입니다.
+            </summary>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ColumnCollection.ConvertToArray(System.Boolean)">
+            <summary>
+            Dictionary를 구합니다.
+            </summary>
+            <param name="includeHiddenColumn"></param>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ColumnCollection.Columns">
+            <summary>
+            컬럼 항목을 구합니다.
+            </summary>
+        </member>
+        <member name="T:GS.Common.Utility.Excels.ExcelColumnInfo">
+            <summary>
+            엑셀 익스포트용 컬럼 정보를 제공하는 DTO 객체 입니다.
+            </summary>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelColumnInfo.ToString">
+            <summary>
+            ExcelColumn를 나타내는 String을 반환합니다. 
+            </summary>
+            <returns>전체 Property의 값</returns>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.Key">
+            <summary>
+            Id를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.TypeName">
+            <summary>
+            TypeName를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.Title">
+            <summary>
+            Title를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.Width">
+            <summary>
+            Width를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.Hidden">
+            <summary>
+            Hidden 여부를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.Align">
+            <summary>
+            Align를 구하거나 설정합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Common.Utility.Excels.ExcelColumnInfo.HorizontalAlignment">
+            <summary>
+            Align 문자열로 HorizontalAlignment를 구합니다.
+            </summary>
+        </member>
+        <member name="T:GS.Common.Utility.Excels.ExcelHelper">
+            <summary>
+            Server에서 Excel을 처리하는데 필요한 기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.GenerateWorkSheet``1(System.Collections.Generic.IEnumerable{``0},NPOI.HSSF.UserModel.HSSFWorkbook,GS.Common.Utility.Excels.ExcelColumnInfo[],System.String,System.Boolean,System.Int16,System.Int16,System.Int16,System.Boolean,System.Boolean)">
+            <summary>
+            엑셀 워크시트을 생성합니다.
+            </summary>
+            <typeparam name="T">모델 타입</typeparam>
+            <param name="dataSource">데이터 소스</param>
+            <param name="workbook">여러 워크시트를 생성할 경우 <see cref="T:NPOI.HSSF.UserModel.HSSFWorkbook"/>를 전달하고 그렇지 않으면 null이나 생성하여 전달</param>
+            <param name="columns">워크 시트를 생성할 컬럼 정보</param>
+            <param name="sheetName">워크시트 이름</param>
+            <param name="useAlternativeRow">행의 색이 번갈아 나올지 여부</param>
+            <param name="oddRowColorIndex">홀수행의 색(http://www.jakartaproject.com/upload/editor/200503141110805468928_jpg의 컬러 챠트 참고)</param>
+            <param name="eventRowColorIndex">짝수행의 색(http://www.jakartaproject.com/upload/editor/200503141110805468928_jpg의 컬러 챠트 참고)</param>
+            <param name="headerHeightMultiple">헤더의 높이 배수</param>
+            <param name="headerWrapText">헤더의 텍스트를 여러행으로 나누어 표시할지 여부</param>
+            <param name="autoSizeColumn">컬럼을 자동 조절할 지 <see cref="T:GS.Common.Utility.Excels.ExcelColumnInfo"/>.Width를 사용할지 여부</param>
+            <returns>생성된 워크시트를 반환합니다.</returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.ConvertPixelToExcelSize(System.Int32)">
+            <summary>
+            일반 pixcel을 POI에서 사용하는 excel pixcel 크기로 변환합니다.
+            </summary>
+            <param name="pixel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.ExcelColumnInfoParser(System.Object)">
+            <summary>
+            엑셀 컬럼 정보를 파싱합니다.
+            </summary>
+            <param name="excelColumns">columns 멤버이름을 포함하는 Json 객체</param>
+            <returns></returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.GetAlphaCellName(System.Int32)">
+            <summary>
+            컬럼 index로 Excel에서 사용하는 알파벳 문자로 변환해서 구합니다.
+            </summary>
+            <param name="colIndex">컬럼 인덱스(0에서 시작합니다.)</param>
+            <returns>A~Z, AA~AZ, BA~BZ... 등을 구합니다.</returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.GenerateWorkSheet``1(``0[],NPOI.HSSF.UserModel.HSSFWorkbook,GS.Common.Utility.Excels.ExcelColumnInfo[],System.String,System.Boolean,System.Int16,System.Int16,System.Int16,System.Boolean,System.Boolean)">
+            <summary>
+            엑셀 워크시트을 생성합니다.
+            </summary>
+            <typeparam name="T">모델 타입</typeparam>
+            <param name="dataSource">데이터 소스</param>
+            <param name="workbook"><see cref="T:NPOI.HSSF.UserModel.HSSFWorkbook"/>로 없으면 생성</param>
+            <param name="columns">워크 시트를 생성할 컬럼 정보</param>
+            <param name="sheetName">워크시트 이름</param>
+            <param name="useAlternativeRow">행의 색이 번갈아 나올지 여부</param>
+            <param name="oddRowColorIndex">홀수행의 색(http://www.jakartaproject.com/upload/editor/200503141110805468928_jpg의 컬러 챠트 참고)</param>
+            <param name="eventRowColorIndex">짝수행의 색(http://www.jakartaproject.com/upload/editor/200503141110805468928_jpg의 컬러 챠트 참고)</param>
+            <param name="headerHeightMultiple">헤더의 높이 배수</param>
+            <param name="headerWrapText">헤더의 텍스트를 여러행으로 나누어 표시할지 여부</param>
+            <param name="autoSizeColumn">컬럼을 자동 조절할 지 <see cref="T:GS.Common.Utility.Excels.ExcelColumnInfo"/>.Width를 사용할지 여부</param>
+            <returns>생성된 워크시트를 반환합니다.</returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.CreateFont(NPOI.HSSF.UserModel.HSSFWorkbook,System.Int16,System.String)">
+            <summary>
+            지정된 폰트로 fontSize에 맞는 IFont를 생성합니다.
+            </summary>
+            <param name="workbook">지정할 워크북</param>
+            <param name="fontSize">폰트 크기</param>
+            <param name="fontName">폰트 이름</param>
+            <returns></returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.InsertRows(NPOI.HSSF.UserModel.HSSFSheet,System.Int32,System.Int32)">
+            <summary>
+            sheet 지정된 숫자만큼의 행을 삽입합니다.
+            </summary>
+            <param name="sheet"></param>
+            <param name="fromRowIndex"></param>
+            <param name="rowCount"></param>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.SetCellValue(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32,System.Object)">
+            <summary>
+            지정된 행/열에 지정된 값을 설정합니다.
+            </summary>
+            <param name="sheet"></param>
+            <param name="row">행</param>
+            <param name="col">열</param>
+            <param name="value">값을 지정하지 않으면 row와 col을 지정한 cell을 반환 합니다.</param>
+            <returns>행과 열이 없으면 생성한 뒤 ICell을 반환합니다.</returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.AddMergedRegion(NPOI.SS.UserModel.ISheet,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32@,System.Object)">
+            <summary>
+            Merge된 영역을 생성 후 firstRow, firstCol에 값을 할당 합니다.
+            </summary>
+            <param name="sheet"></param>
+            <param name="firstRow">첫번째 행</param>
+            <param name="lastRow">마지막 행</param>
+            <param name="firstCol">첫번째 열</param>
+            <param name="lastCol">마지막 열</param>
+            <param name="index">합쳐진 영역의 인덱스</param>
+            <param name="value">값을 지정하지 않으면 row와 col을 지정한 cell을 반환 합니다.</param>
+            <returns></returns>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.ConvertXLSXWorksheetToXLSWorksheet(System.IO.Stream,System.String)">
+            <summary>
+            Render a Excel 2007 (xlsx) Worksheet to NPOI Excel 2003 Worksheet, all excel formatting
+            from XLSX will be lost when converted.  NPOI roadmap shows v1.6 will support Excel 2007 (xlsx).
+            </summary>
+            <param name="excelFileStream">XLSX FileStream</param>
+            <param name="sheetName">Excel worksheet to convert</param>
+            <returns>MemoryStream containing NPOI Excel workbook</returns>
+            <remarks>
+            NPOI Roadmap  : http://npoi.codeplex.com/wikipage?title=NPOI%20Road%20Map
+            NPOI Homepage : http://npoi.codeplex.com/
+            </remarks>
+        </member>
+        <member name="M:GS.Common.Utility.Excels.ExcelHelper.RenderDataTableToExcel(System.Data.DataTable)">
+            <summary>
+            Render DataTable to NPOI Excel 2003 MemoryStream
+            NOTE:  Limitation of 65,536 rows suppored by XLS
+            </summary>
+            <param name="sourceTable">Source DataTable</param>
+            <returns>MemoryStream containing NPOI Excel workbook</returns>
+        </member>
+        <member name="T:System.Web.Mvc.RouteCollectionExtensions">
+            <summary>
+            RouteCollection의 확장기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.RouteCollectionExtensions.MapRouteWithName(System.Web.Routing.RouteCollection,System.String,System.String,System.Object)">
+            <summary>
+            DataToken에 라우트 이름을 넣은 라우트를 생성합니다.
+            </summary>
+            <param name="routes">응용 프로그램에 대한 경로의 컬렉션입니다.</param>
+            <param name="name">매핑할 경로(라우트)의 이름입니다.</param>
+            <param name="url">경로의 URL 패턴입니다.</param>
+            <param name="defaults">기본 경로 값을 포함하는 개체입니다.</param>
+            <returns>매핑된 경로에 대한 참조입니다.</returns>
+            <exception cref="T:System.ArgumentNullException">routes 또는 url 매개 변수가 null입니다.</exception>
+        </member>
+        <member name="M:System.Web.Mvc.RouteCollectionExtensions.MapRouteWithName(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object)">
+            <summary>
+            DataToken에 라우트 이름을 넣은 라우트를 생성합니다.
+            </summary>
+            <param name="routes">응용 프로그램에 대한 경로의 컬렉션입니다.</param>
+            <param name="name">매핑할 경로(라우트)의 이름입니다.</param>
+            <param name="url">경로의 URL 패턴입니다.</param>
+            <param name="defaults">기본 경로 값을 포함하는 개체입니다.</param>
+            <param name="constraints">url 매개 변수에 대한 값을 지정하는 식의 집합입니다.</param>
+            <returns>매핑된 경로에 대한 참조입니다.</returns>
+            <exception cref="T:System.ArgumentNullException">routes 또는 url 매개 변수가 null입니다.</exception>
+        </member>
+        <member name="M:System.Web.Mvc.RouteCollectionExtensions.MapRouteWithName(System.Web.Routing.RouteCollection,System.String,System.String,System.Object,System.Object,System.String[])">
+            <summary>
+            DataToken에 라우트 이름을 넣은 라우트를 생성합니다.
+            </summary>
+            <param name="routes">응용 프로그램에 대한 경로의 컬렉션입니다.</param>
+            <param name="name">매핑할 경로(라우트)의 이름입니다.</param>
+            <param name="url">경로의 URL 패턴입니다.</param>
+            <param name="defaults">기본 경로 값을 포함하는 개체입니다.</param>
+            <param name="constraints">url 매개 변수에 대한 값을 지정하는 식의 집합입니다.</param>
+            <param name="namespaces">응용 프로그램의 네임스페이스 집합입니다.</param>
+            <returns>매핑된 경로에 대한 참조입니다.</returns>
+            <exception cref="T:System.ArgumentNullException">routes 또는 url 매개 변수가 null입니다.</exception>
+        </member>
+        <member name="M:System.Web.Mvc.RouteCollectionExtensions.GetRouteName(System.Web.Routing.Route)">
+            <summary>
+            라우트 이름을 구합니다.
+            </summary>
+            <remarks>View에서만 사용합니다.<br/>Controller에서는 <see cref="M:System.Web.Mvc.UrlHelpers.GetRouteName(System.Web.Mvc.UrlHelper)"/>을 사용합니다.</remarks>
+            <param name="route"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.RouteCollectionExtensions.GetRouteName(System.Web.Routing.RouteData)">
+            <summary>
+            라우트 이름을 구합니다.
+            <remarks>View에서만 사용합니다.<br/>Controller에서는 <see cref="M:System.Web.Mvc.UrlHelpers.GetRouteName(System.Web.Mvc.UrlHelper)"/>을 사용합니다.</remarks>
+            </summary>
+            <param name="routeData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.RouteCollectionExtensions.GetRouteName(System.Web.Routing.RouteValueDictionary)">
+            <summary>
+            라우트 이름을 구합니다.
+            <remarks>View에서만 사용합니다.<br/>Controller에서는 <see cref="M:System.Web.Mvc.UrlHelpers.GetRouteName(System.Web.Mvc.UrlHelper)"/>을 사용합니다.</remarks>
+            </summary>
+            <param name="routeValues"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.Mvc.UrlHelpers">
+            <summary>
+            Url과 관련된 확장 기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="M:System.Web.Mvc.UrlHelpers.IsLocalUrl(System.Web.Mvc.UrlHelper)">
+            <summary>
+            현재 접속이 로컬에서 접속했는지 여부를 구합니다.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.UrlHelpers.IsDebugRoute(System.Web.Mvc.UrlHelper)">
+            <summary>
+            현재 Url이 "Debug" 라우트를 사용했는지 여부를 구합니다.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.UrlHelpers.GetRouteName(System.Web.Mvc.UrlHelper)">
+            <summary>
+            라우트 이름을 구합니다.
+            </summary>
+            <param name="url"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.Mvc.UrlHelpers.GetRequiredString(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Url에서 지정된 식별자와 값을 검색합니다.
+            </summary>
+            <param name="url"></param>
+            <param name="valueName">검색할 값의 키입니다.</param>
+            <returns>해당 키가 valueName과 일치하는 System.Web.Routing.RouteData.Values 속성의 요소입니다.</returns>
+            <exception cref="T:System.InvalidOperationException">valueName에 대한 값이 존재하지 않습니다.</exception>
+        </member>
+        <member name="M:System.Web.Mvc.UrlHelpers.GetRequiredInt32(System.Web.Mvc.UrlHelper,System.String)">
+            <summary>
+            Url에서 지정된 식별자와 값을 검색합니다.
+            </summary>
+            <param name="url"></param>
+            <param name="valueName">검색할 값의 키입니다.</param>
+            <returns>해당 키가 valueName과 일치하는 System.Web.Routing.RouteData.Values 속성의 요소입니다.</returns>
+            <exception cref="T:System.InvalidOperationException">valueName에 대한 값이 존재하지 않습니다.</exception>
+        </member>
+        <member name="T:System.Web.HttpContextExtensions">
+            <summary>
+            HttpContext에 확장 기능을 지원합니다.
+            </summary>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.IsLocalUrl(System.Web.HttpContext)">
+            <summary>
+            현재 접속이 로컬에서 접속했는지 여부를 구합니다.
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.GetHttpContextBase(System.Web.HttpContext)">
+            <summary>
+            HttpContextWrapper를 사용해서 HttpContextBase 개체를 생성합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.GetCookie(System.Web.HttpRequestBase,System.String)">
+            <summary>
+            지정된 키에서 쿠키 값을 구합니다.
+            </summary>
+            <param name="request"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.GetCookie(System.Web.HttpContextBase,System.String)">
+            <summary>
+            지정된 키에서 쿠키 값을 구합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.GetCookie(System.Web.HttpContext,System.String)">
+            <summary>
+            지정된 키에서 쿠키 값을 구합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.GetCookie(System.Web.Mvc.ControllerBase,System.String)">
+            <summary>
+            지정된 키에서 쿠키 값을 구합니다.
+            </summary>
+            <param name="controller"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.HttpResponseBase,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            지정된 키로 쿠키를 생성 합니다.
+            </summary>
+            <param name="response"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+            <param name="expires">만료 일자</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.HttpContextBase,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            지정된 키로 쿠키를 생성 합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+            <param name="expires">만료 일자</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.HttpContext,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            지정된 키로 쿠키를 생성 합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+            <param name="expires">만료 일자</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.Mvc.ControllerBase,System.String,System.String,System.Nullable{System.DateTime})">
+            <summary>
+            지정된 키로 쿠키를 생성 합니다.
+            </summary>
+            <param name="controller"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+            <param name="expires">만료 일자</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.HttpResponseBase,System.String,System.String)">
+            <summary>
+            지정된 키로 브라우저가 열려 있는 기간만 사용되는 쿠키를 생성 합니다.
+            </summary>
+            <param name="response"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.HttpContextBase,System.String,System.String)">
+            <summary>
+            지정된 키로 브라우저가 열려 있는 기간만 사용되는 쿠키를 생성 합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.HttpContext,System.String,System.String)">
+            <summary>
+            지정된 키로 브라우저가 열려 있는 기간만 사용되는 쿠키를 생성 합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.SetCookie(System.Web.Mvc.ControllerBase,System.String,System.String)">
+            <summary>
+            지정된 키로 브라우저가 열려 있는 기간만 사용되는 쿠키를 생성 합니다.
+            </summary>
+            <param name="controller"></param>
+            <param name="cookieKey">쿠키의 키</param>
+            <param name="value">쿠키의 값</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.RemoveCookie(System.Web.HttpResponseBase,System.String)">
+            <summary>
+            지정된 키의 쿠기를 삭제합니다.
+            </summary>
+            <param name="response"></param>
+            <param name="cookieKey">쿠키의 키</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.RemoveCookie(System.Web.HttpContextBase,System.String)">
+            <summary>
+            지정된 키의 쿠기를 삭제합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.RemoveCookie(System.Web.HttpContext,System.String)">
+            <summary>
+            지정된 키의 쿠기를 삭제합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="cookieKey">쿠키의 키</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.RemoveCookie(System.Web.Mvc.ControllerBase,System.String)">
+            <summary>
+            지정된 키의 쿠기를 삭제합니다.
+            </summary>
+            <param name="controller"></param>
+            <param name="cookieKey">쿠키의 키</param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.WriteToPage(System.Web.HttpContextBase,System.String)">
+            <summary>
+            HttpContext 객체의 Response.Write를 이용하여 간단한 로그를 페이지에 표시합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.WriteToPage(System.Web.HttpContext,System.String)">
+            <summary>
+            HttpContext 객체의 Response.Write를 이용하여 간단한 로그를 페이지에 표시합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.WriteToPage(System.Web.Mvc.ControllerBase,System.String)">
+            <summary>
+            HttpContext 객체의 Response.Write를 이용하여 간단한 로그를 페이지에 표시합니다.
+            </summary>
+            <param name="controller"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.WriteLineToPage(System.Web.HttpContextBase,System.String)">
+            <summary>
+            HttpContext 객체의 Response.Write를 이용하여 간단한 로그를 페이지에 표시한 뒤 라인을 분리합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.WriteLineToPage(System.Web.HttpContext,System.String)">
+            <summary>
+            HttpContext 객체의 Response.Write를 이용하여 간단한 로그를 페이지에 표시한 뒤 라인을 분리합니다.
+            </summary>
+            <param name="httpContext"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.WriteLineToPage(System.Web.Mvc.ControllerBase,System.String)">
+            <summary>
+            HttpContext 객체의 Response.Write를 이용하여 간단한 로그를 페이지에 표시한 뒤 라인을 분리합니다.
+            </summary>
+            <param name="controller"></param>
+            <param name="message"></param>
+        </member>
+        <member name="M:System.Web.HttpContextExtensions.GetUserIpAddress(System.Web.HttpRequestBase)">
+            <summary>
+            요청한 클라이언트의 IpAddress를 구합니다.
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GS.Web.Common.MobileHelper">
+            <summary>
+            웹의 추가적인 기능을 제공합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.HttpContext">
+            <summary>
+            현재의 HttpContext를 구합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.Request">
+            <summary>
+            현재의 HttpRequest를 구합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.Response">
+            <summary>
+            현재의 HttpResponse를 구합니다.
+            </summary>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.IsMobileDevice">
+            <summary>
+            51 Degrees를 사용해서 접속 장비가 MobileDevice 인지를 구별합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.IsTablet">
+            <summary>
+            51 Degrees를 사용해서 접속 장비가 타블렛 인지를 구별합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.MobileBrandName">
+            <summary>
+            51 Degrees를 사용해서 Mobile 장비의 브렌드 이름을 구합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GS.Web.Common.MobileHelper.MobileModelName">
+            <summary>
+            51 Degrees를 사용해서 Mobile 장비의 모델 이름을 구합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:System.Web.RazorViewExtensions">
+            <summary>
+            Razor View에서 확장 기능을 지원합니다.
+            </summary>
+        </member>
+        <member name="M:System.Web.RazorViewExtensions.GetControllerName(System.Web.Mvc.WebViewPage)">
+            <summary>
+            현재 view의 controller 이름을 구합니다.
+            </summary>
+            <param name="webViewPage">The web view page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.RazorViewExtensions.GetActionName(System.Web.Mvc.WebViewPage)">
+            <summary>
+            현재 view의 action 이름을 구합니다.
+            </summary>
+            <param name="webViewPage">The web view page.</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.RazorViewExtensions.GetControllerName(System.Web.Mvc.ControllerContext)">
+            <summary>
+            현재 Controller Context의 controller 이름을 구합니다.
+            </summary>
+            <param name="controllerContext">Controller context</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.RazorViewExtensions.GetActionName(System.Web.Mvc.ControllerContext)">
+            <summary>
+            현재 Controller Context의 action 이름을 구합니다.
+            </summary>
+            <param name="controllerContext">Controller context</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.RazorViewExtensions.GetControllerName(System.Web.Mvc.Controller)">
+            <summary>
+            현재 Controller의 controller 이름을 구합니다.
+            </summary>
+            <param name="controller">Controller</param>
+            <returns></returns>
+        </member>
+        <member name="M:System.Web.RazorViewExtensions.GetActionName(System.Web.Mvc.Controller)">
+            <summary>
+            현재 Controller의 action 이름을 구합니다.
+            </summary>
+            <param name="controller">Controller</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

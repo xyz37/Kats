@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="CopyResourceData">
+		<PropertyGroup>
+			<ResourceDataPath>..\..\_ResourceData\</ResourceDataPath>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<ResourceDataFile Include="$(ProjectDir)_ResourceData.txt" />
+		</ItemGroup>
+
+		<ReadLinesFromFile File="@(ResourceDataFile)" Condition=" Exists('@(ResourceDataFile)') " >
+			<Output TaskParameter="Lines" ItemName="ResItemsFromFile"/>
+		</ReadLinesFromFile>
+
+		<Message Condition=" Exists('@(ResourceDataFile)') "
+				 Text="리소스 목록을 읽었습니다." Importance="high" />
+
+		<CombinePath Condition=" Exists('@(ResourceDataFile)') "
+					 BasePath="$(ResourceDataPath)" Paths="@(ResItemsFromFile)">
+			<Output TaskParameter="CombinedPaths" ItemName="ResourceDataFiles"/>
+		</CombinePath>
+
+		<CombinePath Condition=" Exists('@(ResourceDataFile)') "
+					 BasePath="$(TargetDir)" Paths="@(ResItemsFromFile)">
+			<Output TaskParameter="CombinedPaths" ItemName="TargetResourceDataFiles"/>
+		</CombinePath>
+
+		<!-- 
+			_ResourceData.txt의 폴더 구조를 그대로 복사한다 
+			동일 폴더에 복사할 경우 DestinationFiles="@(TargetResourceDataFiles)" => DestinationFolder="$(TargetDir)"
+		-->
+		<Copy Condition=" Exists('@(ResourceDataFile)') "
+			  SourceFiles="@(ResourceDataFiles)"
+			  DestinationFiles="@(TargetResourceDataFiles)"
+			  ContinueOnError="true" SkipUnchangedFiles="true" />
+
+		<Message Condition=" Exists('@(ResourceDataFile)') "
+				 Text="리소스 파일을 복사했습니다." Importance="high" />
+	</Target>
+</Project>

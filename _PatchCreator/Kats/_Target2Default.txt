@@ -1,0 +1,2 @@
+..\InPatch.Updater.exe
+InPatch.Updater.exe.config

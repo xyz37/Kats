@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Target Name="CopySqlCompactBinaries">
+		<ItemGroup>
+			<SqlCeLibFiles 
+				Include="..\packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\**\*.*" />
+		</ItemGroup>
+
+		<Copy SourceFiles="@(SqlCeLibFiles)"
+			  DestinationFiles="@(SqlCeLibFiles->'$(TargetDir)%(RecursiveDir)%(Filename)%(Extension)')"
+			  ContinueOnError="true" SkipUnchangedFiles="true" />
+
+		<Message Text="Microsoft.SqlServer.Compact.4.0.8876.1 NativeBinaries를 복사했습니다." Importance="high" />
+	</Target>
+</Project>
