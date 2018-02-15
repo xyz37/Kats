@@ -164,9 +164,25 @@
       <Project>{1701f637-1bf5-41c1-a8cf-a1746b8c9a71}</Project>
       <Name>ZO.Kats.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ZO.Kats.Dac\ZO.Kats.Dac.csproj">
+    <ProjectReference Include="..\ZO.Kats.Models\ZO.Kats.Models.csproj">
       <Project>{fb352c92-e918-48d3-b66c-fc1a8bda4dc5}</Project>
-      <Name>ZO.Kats.Dac</Name>
+      <Name>ZO.Kats.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZO.Kats.Interfaces\ZO.Kats.Interfaces.csproj">
+      <Project>{cd600942-f5ae-4970-863f-8f5c3bf837af}</Project>
+      <Name>ZO.Kats.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZO.Kats.Resources\ZO.Kats.Resources.csproj">
+      <Project>{2c48190a-32a5-48be-a741-06ac03c2762a}</Project>
+      <Name>ZO.Kats.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZO.Kats.ViewModels\ZO.Kats.ViewModels.csproj">
+      <Project>{fe50eec0-d862-449f-aad4-24e9fa2c80b2}</Project>
+      <Name>ZO.Kats.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZO.Kats.Views\ZO.Kats.Views.csproj">
+      <Project>{a6c66c01-411a-4768-8a85-209eff186e74}</Project>
+      <Name>ZO.Kats.Views</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

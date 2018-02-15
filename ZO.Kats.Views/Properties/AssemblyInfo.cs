@@ -6,11 +6,11 @@ using System.Resources;
 // 어셈블리에 대한 일반 정보는 다음 특성 집합을 통해 
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
-[assembly: AssemblyTitle("KATS(Kiwoom Autoted Trading System)")]
-[assembly: AssemblyDescription("키움 자동 거래 시스템")]
+[assembly: AssemblyTitle("ZO.Kats.Views")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ZerOne Inc.")]
-[assembly: AssemblyProduct("KATS(Kiwoom Autoted Trading System)")]
+[assembly: AssemblyProduct("ZO.Kats.Views")]
 [assembly: AssemblyCopyright("Copyright (C) ZerOne Inc. 2018")]
 [assembly: AssemblyTrademark("ZerOne Inc.")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Resources;
 [assembly: ComVisible(false)]
 
 // 이 프로젝트가 COM에 노출되는 경우 다음 GUID는 typelib의 ID를 나타냅니다.
-[assembly: Guid("1ebb24ad-2ce3-4c00-85a2-98a58c1e7d64")]
+[assembly: Guid("a6c66c01-411a-4768-8a85-209eff186e74")]
 
 // 어셈블리의 버전 정보는 다음 네 가지 값으로 구성됩니다.
 //
@@ -32,6 +32,8 @@ using System.Resources;
 //
 // 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 번호가 자동으로
 // 지정되도록 할 수 있습니다.
+// [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.1802.1511.0001")]
 [assembly: AssemblyFileVersion("1.1802.1511.0001")]
+// Added by CI.MSBuild in 2018.02.15 11:23:40
 [assembly: NeutralResourcesLanguage("ko-KR")]

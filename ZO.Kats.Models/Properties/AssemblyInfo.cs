@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ZerOne Inc.")]
 [assembly: AssemblyProduct("ZO.Kats.Dac")]
-[assembly: AssemblyCopyright("Copyright (C) ZerOne 2017")]
+[assembly: AssemblyCopyright("Copyright (C) ZerOne Inc. 2018")]
 [assembly: AssemblyTrademark("ZerOne Inc.")]
 [assembly: AssemblyCulture("")]
 
@@ -33,7 +33,7 @@ using System.Resources;
 // 모든 값을 지정하거나 아래와 같이 '*'를 사용하여 빌드 번호 및 수정 번호를
 // 기본값으로 할 수 있습니다.
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.1802.0810.0025")]
-[assembly: AssemblyFileVersion("1.1802.0810.0025")]
+[assembly: AssemblyVersion("1.1802.1511.0001")]
+[assembly: AssemblyFileVersion("1.1802.1511.0001")]
 // Added by CI.MSBuild in 2017.10.31 15:18:19
 [assembly: NeutralResourcesLanguage("ko-KR")]

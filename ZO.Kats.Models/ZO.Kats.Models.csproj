@@ -7,8 +7,8 @@
     <ProjectGuid>{FB352C92-E918-48D3-B66C-FC1A8BDA4DC5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ZO.Kats.Dac</RootNamespace>
-    <AssemblyName>ZO.Kats.Dac</AssemblyName>
+    <RootNamespace>ZO.Kats.Models</RootNamespace>
+    <AssemblyName>ZO.Kats.Models</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -115,6 +115,10 @@
     <ProjectReference Include="..\ZO.Kats.Common\ZO.Kats.Common.csproj">
       <Project>{1701f637-1bf5-41c1-a8cf-a1746b8c9a71}</Project>
       <Name>ZO.Kats.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZO.Kats.Interfaces\ZO.Kats.Interfaces.csproj">
+      <Project>{cd600942-f5ae-4970-863f-8f5c3bf837af}</Project>
+      <Name>ZO.Kats.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

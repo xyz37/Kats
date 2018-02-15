@@ -5,9 +5,17 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Common", "ZO.Kats.Common\ZO.Kats.Common.csproj", "{1701F637-1BF5-41C1-A8CF-A1746B8C9A71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Dac", "ZO.Kats.Dac\ZO.Kats.Dac.csproj", "{FB352C92-E918-48D3-B66C-FC1A8BDA4DC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Models", "ZO.Kats.Models\ZO.Kats.Models.csproj", "{FB352C92-E918-48D3-B66C-FC1A8BDA4DC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Launcher", "ZO.Kats.Launcher\ZO.Kats.Launcher.csproj", "{1EBB24AD-2CE3-4C00-85A2-98A58C1E7D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Interfaces", "ZO.Kats.Interfaces\ZO.Kats.Interfaces.csproj", "{CD600942-F5AE-4970-863F-8F5C3BF837AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Resources", "ZO.Kats.Resources\ZO.Kats.Resources.csproj", "{2C48190A-32A5-48BE-A741-06AC03C2762A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.Views", "ZO.Kats.Views\ZO.Kats.Views.csproj", "{A6C66C01-411A-4768-8A85-209EFF186E74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZO.Kats.ViewModels", "ZO.Kats.ViewModels\ZO.Kats.ViewModels.csproj", "{FE50EEC0-D862-449F-AAD4-24E9FA2C80B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{1EBB24AD-2CE3-4C00-85A2-98A58C1E7D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EBB24AD-2CE3-4C00-85A2-98A58C1E7D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EBB24AD-2CE3-4C00-85A2-98A58C1E7D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD600942-F5AE-4970-863F-8F5C3BF837AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD600942-F5AE-4970-863F-8F5C3BF837AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD600942-F5AE-4970-863F-8F5C3BF837AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD600942-F5AE-4970-863F-8F5C3BF837AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C48190A-32A5-48BE-A741-06AC03C2762A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C48190A-32A5-48BE-A741-06AC03C2762A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C48190A-32A5-48BE-A741-06AC03C2762A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C48190A-32A5-48BE-A741-06AC03C2762A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C66C01-411A-4768-8A85-209EFF186E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C66C01-411A-4768-8A85-209EFF186E74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C66C01-411A-4768-8A85-209EFF186E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C66C01-411A-4768-8A85-209EFF186E74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE50EEC0-D862-449F-AAD4-24E9FA2C80B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE50EEC0-D862-449F-AAD4-24E9FA2C80B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE50EEC0-D862-449F-AAD4-24E9FA2C80B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE50EEC0-D862-449F-AAD4-24E9FA2C80B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
