@@ -6,11 +6,11 @@ using System.Resources;
 // 어셈블리에 대한 일반 정보는 다음 특성 집합을 통해 
 // 제어됩니다. 어셈블리와 관련된 정보를 수정하려면
 // 이러한 특성 값을 변경하세요.
-[assembly: AssemblyTitle("KATS(Kiwoom Autoted Trading System)")]
+[assembly: AssemblyTitle("KATS(Kiwoom Automated Trading System)")]
 [assembly: AssemblyDescription("키움 자동 거래 시스템")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ZerOne Inc.")]
-[assembly: AssemblyProduct("KATS(Kiwoom Autoted Trading System)")]
+[assembly: AssemblyProduct("KATS(Kiwoom Automated Trading System)")]
 [assembly: AssemblyCopyright("Copyright (C) ZerOne Inc. 2018")]
 [assembly: AssemblyTrademark("ZerOne Inc.")]
 [assembly: AssemblyCulture("")]
