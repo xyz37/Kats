@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,40 @@ namespace ZO.Kats.Dac.Entities.Base
 	[Serializable]
 	public abstract partial class EntityBase
 	{
+		/// <summary>
+		/// 처리한 사용자 Id를 구하거나 설정합니다.
+		/// </summary>
+		/// <value>
+		/// The tx user identifier.
+		/// </value>
+		[Column(TypeName = "varchar"), MaxLength(8)]
+		public string TxUserId { get; set; }
+
+		/// <summary>
+		/// 처리한 일시를 구하거나 설정합니다.
+		/// </summary>
+		/// <value>
+		/// The tx date.
+		/// </value>
+		public DateTime TxDate { get; set; }
+
+		/// <summary>
+		/// 마지막 수정한 사용자 Id를 구하거나 설정합니다.
+		/// </summary>
+		/// <value>
+		/// The last modified user identifier.
+		/// </value>
+		[Column(TypeName = "varchar"), MaxLength(8)]
+		public string LastModifiedUserId { get; set; }
+
+		/// <summary>
+		/// 마지막 수정 일시를 구하거나 설정합니다.
+		/// </summary>
+		/// <value>
+		/// The last modified date.
+		/// </value>
+		public DateTime LastModified { get; set; }
+
 		/// <summary>
 		/// Gets the current datetime.
 		/// </summary>

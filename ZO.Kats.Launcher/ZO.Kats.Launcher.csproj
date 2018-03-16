@@ -194,6 +194,25 @@
   <ItemGroup>
     <None Include="Resources\Kats.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxKHOpenAPILib">
+      <Guid>{6D8C2B4D-EF41-4750-8AD4-C299033833FB}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="KHOpenAPILib">
+      <Guid>{6D8C2B4D-EF41-4750-8AD4-C299033833FB}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>2</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Import Custom Task -->
   <Import Project="..\_Task\TransformConfig.target" />

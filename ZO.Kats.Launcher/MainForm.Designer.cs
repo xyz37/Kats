@@ -44,19 +44,33 @@
 			this.tlpStat = new System.Windows.Forms.TableLayoutPanel();
 			this.tpStatistics = new System.Windows.Forms.TabPage();
 			this.tpSettings = new System.Windows.Forms.TabPage();
+			this.axKHOpenAPI1 = new AxKHOpenAPILib.AxKHOpenAPI();
+			this.mainMenu = new System.Windows.Forms.MenuStrip();
+			this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsLogin = new System.Windows.Forms.ToolStripMenuItem();
+			this.tsLogout = new System.Windows.Forms.ToolStripMenuItem();
+			this.gbConnectInfo = new System.Windows.Forms.GroupBox();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.ltbUserId = new GS.Win.Forms.UserControls.LabeledTextBox();
+			this.lcbAccount = new GS.Win.Forms.UserControls.LabeledComboBox();
 			this.xpnlContainerBody.SuspendLayout();
 			this.statusStrip.SuspendLayout();
 			this.tlpMain.SuspendLayout();
 			this.tcMain.SuspendLayout();
 			this.tpMonitoring.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).BeginInit();
+			this.mainMenu.SuspendLayout();
+			this.gbConnectInfo.SuspendLayout();
+			this.tableLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// xpnlContainerBody
 			// 
 			this.xpnlContainerBody.Controls.Add(this.tlpMain);
+			this.xpnlContainerBody.Location = new System.Drawing.Point(0, 27);
 			this.xpnlContainerBody.Margin = new System.Windows.Forms.Padding(0);
 			this.xpnlContainerBody.Padding = new System.Windows.Forms.Padding(10);
-			this.xpnlContainerBody.Size = new System.Drawing.Size(1904, 960);
+			this.xpnlContainerBody.Size = new System.Drawing.Size(1904, 933);
 			// 
 			// statusStrip
 			// 
@@ -151,18 +165,20 @@
 			// 
 			// tlpMain
 			// 
-			this.tlpMain.ColumnCount = 1;
-			this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tlpMain.Controls.Add(this.tcMain, 0, 0);
+			this.tlpMain.ColumnCount = 2;
+			this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tlpMain.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tlpMain.Controls.Add(this.tcMain, 1, 0);
+			this.tlpMain.Controls.Add(this.axKHOpenAPI1, 0, 1);
+			this.tlpMain.Controls.Add(this.gbConnectInfo, 0, 0);
 			this.tlpMain.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.tlpMain.Location = new System.Drawing.Point(10, 10);
 			this.tlpMain.Margin = new System.Windows.Forms.Padding(0);
 			this.tlpMain.Name = "tlpMain";
-			this.tlpMain.RowCount = 1;
+			this.tlpMain.RowCount = 2;
 			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tlpMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-			this.tlpMain.Size = new System.Drawing.Size(1884, 940);
+			this.tlpMain.Size = new System.Drawing.Size(1884, 913);
 			this.tlpMain.TabIndex = 5;
 			// 
 			// tcMain
@@ -171,10 +187,10 @@
 			this.tcMain.Controls.Add(this.tpStatistics);
 			this.tcMain.Controls.Add(this.tpSettings);
 			this.tcMain.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.tcMain.Location = new System.Drawing.Point(3, 3);
+			this.tcMain.Location = new System.Drawing.Point(945, 3);
 			this.tcMain.Name = "tcMain";
 			this.tcMain.SelectedIndex = 0;
-			this.tcMain.Size = new System.Drawing.Size(1878, 934);
+			this.tcMain.Size = new System.Drawing.Size(936, 887);
 			this.tcMain.TabIndex = 2;
 			// 
 			// tpMonitoring
@@ -183,7 +199,7 @@
 			this.tpMonitoring.Location = new System.Drawing.Point(4, 32);
 			this.tpMonitoring.Name = "tpMonitoring";
 			this.tpMonitoring.Padding = new System.Windows.Forms.Padding(3);
-			this.tpMonitoring.Size = new System.Drawing.Size(1870, 898);
+			this.tpMonitoring.Size = new System.Drawing.Size(928, 851);
 			this.tpMonitoring.TabIndex = 0;
 			this.tpMonitoring.Text = " 구분기 상태 ";
 			this.tpMonitoring.UseVisualStyleBackColor = true;
@@ -198,14 +214,14 @@
 			this.tlpStat.RowCount = 2;
 			this.tlpStat.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			this.tlpStat.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 260F));
-			this.tlpStat.Size = new System.Drawing.Size(1864, 892);
+			this.tlpStat.Size = new System.Drawing.Size(922, 845);
 			this.tlpStat.TabIndex = 0;
 			// 
 			// tpStatistics
 			// 
 			this.tpStatistics.Location = new System.Drawing.Point(4, 24);
 			this.tpStatistics.Name = "tpStatistics";
-			this.tpStatistics.Size = new System.Drawing.Size(1870, 670);
+			this.tpStatistics.Size = new System.Drawing.Size(1870, 906);
 			this.tpStatistics.TabIndex = 2;
 			this.tpStatistics.Text = " 통    계 ";
 			this.tpStatistics.UseVisualStyleBackColor = true;
@@ -214,22 +230,130 @@
 			// 
 			this.tpSettings.Location = new System.Drawing.Point(4, 24);
 			this.tpSettings.Name = "tpSettings";
-			this.tpSettings.Size = new System.Drawing.Size(1870, 670);
+			this.tpSettings.Size = new System.Drawing.Size(1870, 906);
 			this.tpSettings.TabIndex = 3;
 			this.tpSettings.Text = " 설    정 ";
 			this.tpSettings.UseVisualStyleBackColor = true;
+			// 
+			// axKHOpenAPI1
+			// 
+			this.axKHOpenAPI1.Enabled = true;
+			this.axKHOpenAPI1.Location = new System.Drawing.Point(3, 896);
+			this.axKHOpenAPI1.Name = "axKHOpenAPI1";
+			this.axKHOpenAPI1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axKHOpenAPI1.OcxState")));
+			this.axKHOpenAPI1.Size = new System.Drawing.Size(100, 14);
+			this.axKHOpenAPI1.TabIndex = 3;
+			this.axKHOpenAPI1.Visible = false;
+			// 
+			// mainMenu
+			// 
+			this.mainMenu.Font = new System.Drawing.Font("맑은 고딕", 10F);
+			this.mainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.파일ToolStripMenuItem});
+			this.mainMenu.Location = new System.Drawing.Point(0, 0);
+			this.mainMenu.Name = "mainMenu";
+			this.mainMenu.Size = new System.Drawing.Size(1904, 27);
+			this.mainMenu.TabIndex = 6;
+			this.mainMenu.Text = "menuStrip1";
+			// 
+			// 파일ToolStripMenuItem
+			// 
+			this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsLogin,
+            this.tsLogout});
+			this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
+			this.파일ToolStripMenuItem.Size = new System.Drawing.Size(64, 23);
+			this.파일ToolStripMenuItem.Text = "파일(&F)";
+			// 
+			// tsLogin
+			// 
+			this.tsLogin.Name = "tsLogin";
+			this.tsLogin.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.L)));
+			this.tsLogin.Size = new System.Drawing.Size(205, 24);
+			this.tsLogin.Text = "로그 인(&I)";
+			// 
+			// tsLogout
+			// 
+			this.tsLogout.Name = "tsLogout";
+			this.tsLogout.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.O)));
+			this.tsLogout.Size = new System.Drawing.Size(205, 24);
+			this.tsLogout.Text = "로그 아웃(&O)";
+			// 
+			// gbConnectInfo
+			// 
+			this.gbConnectInfo.Controls.Add(this.tableLayoutPanel1);
+			this.gbConnectInfo.Location = new System.Drawing.Point(3, 3);
+			this.gbConnectInfo.Name = "gbConnectInfo";
+			this.gbConnectInfo.Size = new System.Drawing.Size(886, 79);
+			this.gbConnectInfo.TabIndex = 4;
+			this.gbConnectInfo.TabStop = false;
+			this.gbConnectInfo.Text = "접속 정보";
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Controls.Add(this.ltbUserId, 0, 0);
+			this.tableLayoutPanel1.Controls.Add(this.lcbAccount, 1, 0);
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 27);
+			this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 1;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(880, 49);
+			this.tableLayoutPanel1.TabIndex = 0;
+			// 
+			// ltbUserId
+			// 
+			this.ltbUserId.BackColor = System.Drawing.Color.White;
+			this.ltbUserId.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.ltbUserId.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.ltbUserId.LabelText = "아 이 디";
+			this.ltbUserId.LabelWidth = 130;
+			this.ltbUserId.Location = new System.Drawing.Point(3, 3);
+			this.ltbUserId.Name = "ltbUserId";
+			this.ltbUserId.Size = new System.Drawing.Size(434, 43);
+			this.ltbUserId.TabIndex = 0;
+			this.ltbUserId.Theme = GS.Win.Forms.UserControls.UserControlThemes.DarkCyan;
+			// 
+			// lcbAccount
+			// 
+			this.lcbAccount.BackColor = System.Drawing.Color.White;
+			// 
+			// 
+			// 
+			this.lcbAccount.ComboBox.BackColor = System.Drawing.Color.White;
+			this.lcbAccount.ComboBox.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lcbAccount.ComboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+			this.lcbAccount.ComboBox.Location = new System.Drawing.Point(0, 0);
+			this.lcbAccount.ComboBox.Name = "";
+			this.lcbAccount.ComboBox.Size = new System.Drawing.Size(292, 32);
+			this.lcbAccount.ComboBox.TabIndex = 0;
+			this.lcbAccount.DialogResult = System.Windows.Forms.DialogResult.OK;
+			this.lcbAccount.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.lcbAccount.LabelText = "증권계좌번호";
+			this.lcbAccount.LabelWidth = 130;
+			this.lcbAccount.Location = new System.Drawing.Point(443, 3);
+			this.lcbAccount.Name = "lcbAccount";
+			this.lcbAccount.Size = new System.Drawing.Size(434, 43);
+			this.lcbAccount.TabIndex = 1;
+			this.lcbAccount.Theme = GS.Win.Forms.UserControls.UserControlThemes.DarkCyan;
 			// 
 			// MainForm
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.ClientSize = new System.Drawing.Size(1904, 1001);
 			this.Controls.Add(this.statusStrip);
+			this.Controls.Add(this.mainMenu);
 			this.Font = new System.Drawing.Font("맑은 고딕", 13F);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.KeyPreview = true;
 			this.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
 			this.Name = "MainForm";
 			this.Text = "Kiwoom Automated Trading System";
+			this.Controls.SetChildIndex(this.mainMenu, 0);
 			this.Controls.SetChildIndex(this.statusStrip, 0);
 			this.Controls.SetChildIndex(this.xpnlContainerBody, 0);
 			this.xpnlContainerBody.ResumeLayout(false);
@@ -238,6 +362,11 @@
 			this.tlpMain.ResumeLayout(false);
 			this.tcMain.ResumeLayout(false);
 			this.tpMonitoring.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.axKHOpenAPI1)).EndInit();
+			this.mainMenu.ResumeLayout(false);
+			this.mainMenu.PerformLayout();
+			this.gbConnectInfo.ResumeLayout(false);
+			this.tableLayoutPanel1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -259,6 +388,15 @@
 		private System.Windows.Forms.TabPage tpStatistics;
 		private System.Windows.Forms.TabPage tpSettings;
 		private System.Windows.Forms.TableLayoutPanel tlpStat;
+		private AxKHOpenAPILib.AxKHOpenAPI axKHOpenAPI1;
+		private System.Windows.Forms.MenuStrip mainMenu;
+		private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem tsLogin;
+		private System.Windows.Forms.ToolStripMenuItem tsLogout;
+		private System.Windows.Forms.GroupBox gbConnectInfo;
+		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+		private GS.Win.Forms.UserControls.LabeledTextBox ltbUserId;
+		private GS.Win.Forms.UserControls.LabeledComboBox lcbAccount;
 	}
 }
 
