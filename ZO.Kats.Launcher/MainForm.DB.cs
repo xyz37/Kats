@@ -44,7 +44,5 @@ namespace ZO.Kats.Launcher
 		{
 			return setting.FirstOrDefault(x => x.Key == key)?.Value;
 		}
-
-
 	}
 }
